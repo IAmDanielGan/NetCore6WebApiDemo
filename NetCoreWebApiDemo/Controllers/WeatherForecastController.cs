@@ -35,7 +35,7 @@ namespace NetCoreWebApiDemo.Controllers
         }
 
         /// <summary>
-        /// Demo comment
+        /// Demo comment PostWeatherForecast
         /// </summary>
         /// <returns></returns>
         [HttpPost(Name = "PostWeatherForecast")]
