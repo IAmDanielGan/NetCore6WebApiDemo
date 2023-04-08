@@ -34,6 +34,10 @@ namespace NetCoreWebApiDemo.Controllers
             .ToArray();
         }
 
+        /// <summary>
+        /// Demo comment
+        /// </summary>
+        /// <returns></returns>
         [HttpPost(Name = "PostWeatherForecast")]
         public IEnumerable<WeatherForecast> Post()
         {
