@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
+using NetCoreWebApiDemo.Utility.Swagger;
 
 namespace NetCoreWebApiDemo.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [ApiExplorerSettings(IgnoreApi = false, GroupName = nameof(ApiVersions.V1))]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries 

@@ -4,34 +4,36 @@ using NetCoreWebApiDemo.Utility.Swagger;
 
 namespace NetCoreWebApiDemo.Controllers
 {
+    /// <summary>
+    /// A new version about UserController
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    [ApiExplorerSettings(IgnoreApi = false, GroupName = nameof(ApiVersions.V1))]
-    public class CompanyController : ControllerBase
+    [ApiExplorerSettings(IgnoreApi = false, GroupName = nameof(ApiVersions.V2))]
+    public class UserV2Controller : ControllerBase
     {
         [HttpGet()]
-        public Company GetCompany()
+        public User GetUser()
         {
-            return new() { ID = 1, Name = "Kingstar" };
+            return new() { ID = 1, Name = "Daniel", Age = 25 };
         }
 
         [HttpPost()]
-        public int AddCompany()
+        public int AddUser()
         {
             return 1;
         }
 
         [HttpPut()]
-        public int UpdateCompany()
+        public int UpdateUser()
         {
             return 1;
         }
 
         [HttpDelete()]
-        public int DeleteCompany()
+        public int DeleteUser()
         {
             return 1;
         }
-
     }
 }
