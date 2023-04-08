@@ -31,5 +31,11 @@ namespace NetCoreWebApiDemo.Controllers
             })
             .ToArray();
         }
+
+        [HttpPost(Name = "PostWeatherForecast")]
+        public int Delete()
+        {
+            return 1;
+        }
     }
 }
