@@ -3,6 +3,9 @@ using NetCoreWebApiDemo.Utility.Swagger;
 
 namespace NetCoreWebApiDemo.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     [ApiExplorerSettings(IgnoreApi = false, GroupName = nameof(ApiVersions.V1))]
@@ -13,13 +16,17 @@ namespace NetCoreWebApiDemo.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
+        /// <summary>
+        /// Instruct
+        /// </summary>
+        /// <param name="logger"></param>
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
         }
 
         /// <summary>
-        /// 
+        /// Get resource
         /// </summary>
         /// <returns></returns>
         [HttpGet(Name = "GetWeatherForecast")]
@@ -34,7 +41,11 @@ namespace NetCoreWebApiDemo.Controllers
             .ToArray();
         }
 
-        [HttpPost(Name = "PostWeatherForecast")]
+        /// <summary>
+        /// Delete resource
+        /// </summary>
+        /// <returns></returns>
+        [HttpDelete(Name = "PostWeatherForecast")]
         public int Delete()
         {
             return 1;

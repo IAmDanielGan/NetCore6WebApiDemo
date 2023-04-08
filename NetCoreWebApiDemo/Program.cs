@@ -24,6 +24,11 @@ builder.Services.AddSwaggerGen(options => {
             Description = $"Common Version in Core API version{version}"
         });
     });
+
+    var file = Path.Combine(AppContext.BaseDirectory, "NetCoreWebApiDemo.xml");
+    options.IncludeXmlComments(file, true);
+    options.OrderActionsBy(o => o.RelativePath);
+
 });
 
 var app = builder.Build();
