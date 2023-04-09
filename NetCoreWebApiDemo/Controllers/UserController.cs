@@ -7,6 +7,7 @@ namespace NetCoreWebApiDemo.Controllers
     /// <summary>
     /// User Controller
     /// </summary>
+    //[Route("api/[controller]/[action]")]    [action]  Knowledge point: against RESTFul the style
     [Route("api/[controller]")]
     [ApiController]
     [ApiExplorerSettings(IgnoreApi =false,GroupName =nameof(ApiVersions.V1))]
@@ -20,6 +21,20 @@ namespace NetCoreWebApiDemo.Controllers
         public User GetUser()
         {
             return new() { ID = 1, Name = "Daniel", Age = 25 };
+        }
+
+
+        /// <summary>
+        /// Get Page User ByID
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
+        [HttpGet()]
+        [Route("{userId}/{pageSize}")]     //Result in URL userId=1, pageSize=2: https://localhost:7114/api/User/1/2    
+        public int GetPageUserByID(int userId,int pageSize)
+        {
+            return 2;
         }
 
         /// <summary>
@@ -51,5 +66,6 @@ namespace NetCoreWebApiDemo.Controllers
         {
             return 1;
         }
+
     }
 }
