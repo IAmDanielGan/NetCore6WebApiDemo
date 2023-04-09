@@ -16,14 +16,16 @@ builder.Services.AddControllers()
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options => {
-    typeof(ApiVersions).GetEnumNames().ToList().ForEach(version => {                                    //Show differen version control
-        options.SwaggerDoc(version, new Microsoft.OpenApi.Models.OpenApiInfo()
-        {
-            Title = $"{version}:API",
-            Version = version,
-            Description = $"Common Version in Core API version{version}"
-        });
-    });
+    #region Version Control difined self
+    //typeof(ApiVersions).GetEnumNames().ToList().ForEach(version => {                                    //Show differen version control
+    //    options.SwaggerDoc(version, new Microsoft.OpenApi.Models.OpenApiInfo()
+    //    {
+    //        Title = $"{version}:API",
+    //        Version = version,
+    //        Description = $"Common Version in Core API version{version}"
+    //    });
+    //});
+    #endregion
 
     var file = Path.Combine(AppContext.BaseDirectory, "NetCoreWebApiDemo.xml");
     options.IncludeXmlComments(file, true);
