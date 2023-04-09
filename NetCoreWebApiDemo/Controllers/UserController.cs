@@ -26,12 +26,14 @@ namespace NetCoreWebApiDemo.Controllers
 
         /// <summary>
         /// Get Page User ByID
+        /// Result in URL userId=1, pageSize=2: https://localhost:7114/api/User/1/2  
+        /// This  not Restful style: e.g https://localhost:7114/api/User?userId=1&pageSize=2    
         /// </summary>
         /// <param name="userId"></param>
         /// <param name="pageSize"></param>
         /// <returns></returns>
         [HttpGet()]
-        [Route("{userId}/{pageSize}")]     //Result in URL userId=1, pageSize=2: https://localhost:7114/api/User/1/2    
+        [Route("{userId:int}/{pageSize:int}")]     
         public int GetPageUserByID(int userId,int pageSize)
         {
             return 2;
